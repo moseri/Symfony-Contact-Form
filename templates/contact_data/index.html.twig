@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kapcsolat felvétel{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center">Lépj velünk kapcsolatba!</h1>
+    <div class="container my-3 p-5">
+        {% if not submitted %}
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit" class="btn btn-primary btn-block col-md-6 offset-md-3 my-3 py-1">Küldés</button>
+        {{ form_end(form) }}
+        {% endif %}
+        {% if message is not empty %}
+        <div class="alert alert-info my-2 text-center">
+            {{ message }}
+        </div>
+        {% endif %}
+    </div>
+    
+
+{% endblock %}
